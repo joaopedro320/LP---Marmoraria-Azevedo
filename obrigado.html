@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1F1E1C">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Recebemos seu pedido | Azevedo Mármores e Granitos</title>
+  <!-- ============================================================
+       [QH4 SLOT 1] GTM (CABEÇALHO)
+       O que colar: o snippet do Google Tag Manager que vai no <head>.
+       Exemplo (remova os comentários internos e troque GTM-XXXXXXX):
+         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+       ============================================================ -->
+
+  <!-- ============================================================
+       [QH4 SLOT 2] VERIFICAÇÕES DE DOMÍNIO
+       O que colar: meta tags de verificação (Google Search Console, Meta Business etc.).
+       Exemplo:
+         <meta name="google-site-verification" content="CODIGO">
+         <meta name="facebook-domain-verification" content="CODIGO">
+       ============================================================ -->
+
+  <!-- ============================================================
+       [QH4 SLOT 3] META PIXEL DIRETO (use SÓ se NÃO usar GTM)
+       O que colar: o código base do Pixel da Meta.
+       Exemplo: <script>!function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','ID_DO_PIXEL');fbq('track','PageView');</script>
+       ============================================================ -->
+
+  <!-- ============================================================
+       [QH4 SLOT 4] GTAG GOOGLE ADS / GA4 (use SÓ se NÃO usar GTM)
+       O que colar: o gtag.js com o ID da conta.
+       Exemplo:
+         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+         <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');gtag('config','AW-XXXXXXXXX');</script>
+       ============================================================ -->
+</head>
+<body>
+  <!-- ============================================================
+       [QH4 SLOT 5] GTM NOSCRIPT (logo após abrir o <body>)
+       O que colar: o bloco noscript do GTM.
+       Exemplo: <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+       ============================================================ -->
+  <main class="msg">
+    <div class="msg-in">
+      <svg class="marca-sel" viewBox="0 0 64 64" width="56" height="56" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#2A2826"/><path d="M18 48 L32 14 L46 48" fill="none" stroke="#fff" stroke-width="6"/><path d="M12 56 L52 20" stroke="#F26A1B" stroke-width="4" fill="none"/></svg>
+      <h1 class="h1">Recebemos seu pedido</h1>
+      <p>Em instantes você será levado ao WhatsApp para falar com a equipe da Azevedo Mármores e Granitos. Se nada acontecer, use o botão abaixo.</p>
+      <a class="btn" id="btn-wa" href="https://wa.me/5596991912217" target="_self" rel="noopener">Abrir o WhatsApp agora</a>
+      <a class="btn btn-linha" href="index.html">Voltar ao site</a>
+    </div>
+  </main>
+  <!-- ============================================================
+       [QH4 SLOT 6] SCRIPTS DE TERCEIROS (antes do fechamento do </body>)
+       O que colar: chat, heatmap (Clarity, Hotjar), CRM/GHL embed etc.
+       Exemplo: <script src="https://exemplo.com/widget.js" defer></script>
+       ============================================================ -->
+
+  <!-- ============================================================
+       [QH4 SLOT 7] CONFIGURAÇÃO (arquivo assets/js/tracking.js)
+       Não cole nada aqui. WhatsApp, webhook e rótulos de conversão ficam
+       em assets/js/tracking.js, objeto QH4_CONFIG.
+       ============================================================ -->
+  <script src="assets/js/tracking.js"></script>
+
+  <!-- ============================================================
+       [QH4 SLOT 8] CONVERSÃO DA PÁGINA DE OBRIGADO
+       ATIVO NESTA PÁGINA (obrigado.html). Cole aqui o código de conversão.
+       O que colar: evento de conversão do Google Ads / Meta (Lead).
+       Exemplo: <script>gtag('event','conversion',{'send_to':'AW-XXXXXXXXX/ROTULO'});</script>
+       ============================================================ -->
+  <script>
+    (function () {
+      var cfg = window.QH4_CONFIG;
+      window.QH4.track("thank_you_view");
+      var url = window.QH4.waLink(cfg.mensagemObrigado);
+      document.getElementById("btn-wa").setAttribute("href", url);
+      setTimeout(function () { window.location.href = url; }, (cfg.redirecionarEm || 4) * 1000);
+    })();
+  </script>
+  <script src="https://app-validacao-lp-sapp-validacao-lp.vercel.app/api/t" data-lp="lp-azevedo-marmoraria" defer></script>
+</body>
+</html>
