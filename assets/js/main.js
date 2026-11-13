@@ -100,7 +100,7 @@
     }
 
     var linhas = [
-      "Olá, vim pelo site da Azevedo Mármores e Granitos e quero um orçamento.",
+      window.QH4_CONFIG.mensagemOrcamento,
       "",
       "Nome: " + d.nome,
       "WhatsApp: " + d.whatsapp,

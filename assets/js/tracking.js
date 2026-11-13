@@ -7,7 +7,10 @@ window.QH4_CONFIG = {
   whatsapp: "5596991912217",
 
   // Mensagem padrão dos botões de WhatsApp
-  mensagemPadrao: "Olá, vim pelo site da Azevedo Mármores e Granitos e quero um orçamento.",
+  mensagemPadrao: "Olá, vim pelo site da marmoraria e gostaria de mais informações.",
+
+  // Mensagem dos botões que falam de orçamento (data-wa-msg="orcamento")
+  mensagemOrcamento: "Olá, vim pelo site da marmoraria e gostaria de solicitar um orçamento.",
 
   // Mensagem enviada depois do formulário quando há webhook (página de obrigado)
   mensagemObrigado: "Olá, acabei de preencher o formulário no site. Aguardo mais informações.",
@@ -50,7 +53,9 @@ window.QH4 = {
 document.addEventListener("DOMContentLoaded", function () {
   var els = document.querySelectorAll("[data-wa]");
   for (var i = 0; i < els.length; i++) {
-    els[i].setAttribute("href", window.QH4.waLink(window.QH4_CONFIG.mensagemPadrao));
+    var tipo = els[i].getAttribute("data-wa-msg");
+    var msg = tipo === "orcamento" ? window.QH4_CONFIG.mensagemOrcamento : window.QH4_CONFIG.mensagemPadrao;
+    els[i].setAttribute("href", window.QH4.waLink(msg));
     els[i].addEventListener("click", function (e) {
       window.QH4.track("whatsapp_click", { wa_local: e.currentTarget.getAttribute("data-wa-local") || "outro" });
     });
